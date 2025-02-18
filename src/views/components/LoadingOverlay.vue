@@ -1,0 +1,53 @@
+<script setup lang="ts">
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  isShow: {
+    type: Boolean,
+    default: true,
+  },
+});
+</script>
+
+<template>
+  <div :class="[$style.wrap, { [$style.show]: props.isShow }]">
+    <span :class="$style.loader"></span>
+  </div>
+</template>
+
+<style module lang="scss">
+.wrap {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 14, 14, 0.45);
+}
+
+.show {
+  display: flex;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e1e1e1;
+  border-top: 4px solid #0672cb;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
