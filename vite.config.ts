@@ -23,5 +23,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ['primevue/datatable', 'primevue/column'],
   },
-  base: '/ui/',
 });
