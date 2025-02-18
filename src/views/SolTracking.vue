@@ -37,7 +37,7 @@ onMounted(async () => {
   fetchTokens(); // Initial fetch
 
   // Set an interval to fetch data every 5 seconds
-  intervalId = setInterval(fetchTokens, 5000);
+  intervalId = setInterval(fetchTokens, 3000);
 });
 
 // Clear the interval when the component is unmounted
